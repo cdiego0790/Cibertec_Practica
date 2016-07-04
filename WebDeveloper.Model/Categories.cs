@@ -14,16 +14,21 @@ namespace WebDeveloper.Model
         }
 
         [Key]
+        [Required]
+        [Display(Name = "Category ID: ")]
         public int CategoryID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "This field is required")]
         [StringLength(15)]
+        [Display(Name = "Category Name")]
         public string CategoryName { get; set; }
 
         [Column(TypeName = "ntext")]
+        [Display(Name = "Category Description")]
         public string Description { get; set; }
 
         [Column(TypeName = "image")]
+        [Display(Name = "Category Image")]
         public byte[] Picture { get; set; }
 
         
